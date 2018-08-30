@@ -18,7 +18,10 @@ namespace Mesh2018.Controllers
         /// </summary>
         /// <param name="id">The unique identifier of the employee</param>
         /// <returns>Employee</returns>
-        /// <remarks>Remarks are turned into Implementaion notes in swagger</remarks>
+        /// <remarks>Remarks are turned into Implementaion notes in swagger.</remarks>
+        /// <response code="200">Employee fetched.</response>
+        /// <response code="400">Invalid unique identifier (id) provided.</response>
+        /// <response code="500">Something went wrong at the server.</response>
         [HttpGet("{id}")]        
         [ProducesResponseType(typeof(Employee), 200)]
         [ProducesResponseType(400)]
