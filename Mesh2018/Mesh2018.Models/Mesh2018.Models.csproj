@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Mesh2018.Models.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.1\Mesh2018.Models.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <Target Name="PostBuild" BeforeTargets="PostBuildEvent">
+    <ItemGroup>
+      <DocFile Include="bin\$(Configuration)\$(TargetFramework)\*.xml" />
+    </ItemGroup>
+    <Message Importance="High" Text="***** Copying $(ProjectName) XML Docs to Docs folder *****"></Message>
+    <Copy SourceFiles="@(DocFile)" DestinationFolder="$(SolutionDir)docs" SkipUnchangedFiles="false" />
+  </Target>
+</Project>

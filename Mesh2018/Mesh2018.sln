@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesh2018", "Mesh2018\Mesh2018.csproj", "{19E38C5D-4966-453C-B6CC-EC048E526CF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesh2018.Api.Employees", "Mesh2018.Api.Employees\Mesh2018.Api.Employees.csproj", "{95CA4AD6-8CAB-4DE2-AE51-C129A0861545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mesh2018.Models", "Mesh2018.Models\Mesh2018.Models.csproj", "{04D61012-A298-48C4-9E82-A2EE36CD376B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{19E38C5D-4966-453C-B6CC-EC048E526CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19E38C5D-4966-453C-B6CC-EC048E526CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19E38C5D-4966-453C-B6CC-EC048E526CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CA4AD6-8CAB-4DE2-AE51-C129A0861545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CA4AD6-8CAB-4DE2-AE51-C129A0861545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CA4AD6-8CAB-4DE2-AE51-C129A0861545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CA4AD6-8CAB-4DE2-AE51-C129A0861545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D61012-A298-48C4-9E82-A2EE36CD376B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D61012-A298-48C4-9E82-A2EE36CD376B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D61012-A298-48C4-9E82-A2EE36CD376B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D61012-A298-48C4-9E82-A2EE36CD376B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

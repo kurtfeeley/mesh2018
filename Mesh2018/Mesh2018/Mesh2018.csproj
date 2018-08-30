@@ -22,4 +22,20 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mesh2018.Api.Employees\Mesh2018.Api.Employees.csproj" />
+    <ProjectReference Include="..\Mesh2018.Models\Mesh2018.Models.csproj" />
+  </ItemGroup>
+
+
+  <Target Name="PostBuild" BeforeTargets="PostBuildEvent">
+    <ItemGroup>
+      <DocFile Include="$(SolutionDir)docs/*.xml" />
+    </ItemGroup>
+    <Message Importance="High" Text="***** Copying XML Files to Host Output *****"></Message>
+    <Copy SourceFiles="@(DocFile)" DestinationFolder="$(ProjectDir)$(OutDir)" SkipUnchangedFiles="false" />
+    <Message Importance="High" Text="***** Removing XML Files from Doc folder *****"></Message>
+    <Delete Files="@(DocFile)" />
+  </Target>
+  
 </Project>

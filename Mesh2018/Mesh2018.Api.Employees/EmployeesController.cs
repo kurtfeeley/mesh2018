@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Mesh2018.Models;
-using Microsoft.AspNetCore.Http;
+﻿using Mesh2018.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
-namespace Mesh2018.Controllers
-{    
+namespace Mesh2018.Api.Employees
+{
     [Route("api/[controller]")]
-    [ApiController]      
+    [ApiController]
     public class EmployeesController : ControllerBase
     {
         // GET: api/Employees/id
@@ -22,14 +18,15 @@ namespace Mesh2018.Controllers
         /// <response code="200">Employee fetched.</response>
         /// <response code="400">Invalid unique identifier (id) provided.</response>
         /// <response code="500">Something went wrong at the server.</response>
-        [HttpGet("{id}")]        
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(Employee), 200)]
         [ProducesResponseType(400)]
-        [ProducesResponseType(500)]        
+        [ProducesResponseType(500)]
         public IActionResult Get(int id)
         {
             //param validation
-            if (id > 1) {
+            if (id > 1)
+            {
                 return BadRequest();
             }
 
@@ -37,6 +34,6 @@ namespace Mesh2018.Controllers
 
             return Ok(employee);
         }
-        
+
     }
 }

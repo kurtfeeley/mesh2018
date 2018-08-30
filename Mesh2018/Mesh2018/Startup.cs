@@ -33,8 +33,18 @@ namespace Mesh2018
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
 
-                var docFilePath = Path.Combine(AppContext.BaseDirectory, "documentation.xml");
-                c.IncludeXmlComments(docFilePath);
+                var path = AppDomain.CurrentDomain.BaseDirectory;
+                var dir = new DirectoryInfo(path);
+
+                string searchString = "*.xml";
+
+                IEnumerable<FileInfo> fileList = dir.EnumerateFiles(searchString);
+
+                foreach (FileInfo file in fileList)
+                {
+                    c.IncludeXmlComments(file.FullName);
+                }
+
             });
         }
 
