@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -31,6 +32,9 @@ namespace Mesh2018
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+
+                var docFilePath = Path.Combine(AppContext.BaseDirectory, "documentation.xml");
+                c.IncludeXmlComments(docFilePath);
             });
         }
 
