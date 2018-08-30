@@ -2,10 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace Mesh2018.Api.Employees
+namespace Mesh2018.Api.Employees.V1
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/v{api-version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class EmployeesController : ControllerBase
     {
         // GET: api/Employees/id
@@ -34,6 +35,6 @@ namespace Mesh2018.Api.Employees
 
             return Ok(employee);
         }
-
+     
     }
 }

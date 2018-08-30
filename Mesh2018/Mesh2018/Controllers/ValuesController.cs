@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Mesh2018.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/v{api-version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
+    [ApiVersion("2.0")]
     public class ValuesController : ControllerBase
     {
         // GET api/values
