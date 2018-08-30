@@ -12,12 +12,21 @@ namespace Mesh2018.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        // GET: api/Employee
-        [HttpGet]
-        [Route("{id}")]
-        public Employee Get(int id)
+        // GET: api/Employees/id
+        [HttpGet("{id}")]        
+        [ProducesResponseType(typeof(Employee), 200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public IActionResult Get(int id)
         {
-            return new Employee { Id = 1, FirstName ="Kurt", LastName="Feeley", Address = "1 Main St.",  City="Indianapolis", State="IN", Zip="46210" };
+            //param validation
+            if (id > 1) {
+                return BadRequest();
+            }
+
+            var employee = new Employee { Id = 1, FirstName = "Kurt", LastName = "Feeley", Address = "1 Main St.", City = "Indianapolis", State = "IN", Zip = "46210" };
+
+            return Ok(employee);
         }
         
     }
