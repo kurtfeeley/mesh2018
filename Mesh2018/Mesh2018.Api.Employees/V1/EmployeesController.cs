@@ -1,5 +1,6 @@
 ﻿using Mesh2018.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 
 namespace Mesh2018.Api.Employees.V1
@@ -35,6 +36,28 @@ namespace Mesh2018.Api.Employees.V1
 
             return Ok(employee);
         }
-     
+
+        /// <summary>
+        /// Changes an Employees First Name
+        /// </summary>
+        /// <param name="employee"></param>
+        /// <param name="newFirstName"></param>
+        /// <returns>Employee</returns>
+        [HttpGet("ChangeFirstName")]
+        [ProducesResponseType(typeof(Employee), 200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public IActionResult ChangeFirstName([FromQuery] Employee employee, [FromQuery, BindRequired] string newFirstName)
+        {
+            //param validation
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            employee.FirstName = newFirstName;
+
+            return Ok(employee);
+        }   
     }
 }

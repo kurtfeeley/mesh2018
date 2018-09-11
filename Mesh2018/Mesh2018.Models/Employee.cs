@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mesh2018.Models
 {
@@ -14,12 +15,14 @@ namespace Mesh2018.Models
         /// The first name of the employee.
         /// </summary>
         /// <example>Kurt</example>
+        [Required]
         public string FirstName { get; set; }
 
         /// <summary>
         /// The last name of the employee.
         /// </summary>
         /// <example>Feeley</example>
+        [Required]
         public string LastName { get; set; }
 
         public string Address { get; set; }
